@@ -15,13 +15,7 @@ let conn
 
 const beta = (mailObject) => {
   return new Promise((resolve, reject) => {
-    /*
-    sgMail.send(mailObject)
-    .then(([result, body]) => { 
-      resolve({statusCode: 200})
-    })
-    .catch(error => reject(error))
-    */
+    
    sgMail
    .send(mailObject)
    .then((result) => {    

@@ -7,9 +7,7 @@ const options = {
         useNewUrlParser: true,       
         useUnifiedTopology: true }
 
-exports.createConnection = async () => { 
-  console.log(`--------debug connection ------------`)
-  console.log(url)
+exports.createConnection = async () => {   
   const client = new MongoClient(url, options)
 
   try {
