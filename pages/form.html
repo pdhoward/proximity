@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
+    <title>Strategic Machines</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+  background: linear-gradient(0deg, rgba(68,68,68,1) 0%, rgba(0,0,0,1) 100%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: .5rem;
+  margin-top: 1rem;
+  background: #555;
+}
+
+.header p {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.header-text {
+  text-align: center;
+  color: white;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.center-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+} */
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 95%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+    <div class="header">
+      <a href="../index.html">
+        <img class="proximity-logo proximity-form" src="../assets/img/icon-72x72.png">
+      </a>
+        <h2 class="header-text mt-4">Proximity Beta Early Access</h2>
+        <p class="header-text"><b>Strategic Machines - Innovation at the Edge </b></p>
+    </div> 
+    
+    <div class="container">
+      <form id="betaform" style="display: inline;">
+        <div hidden aria-hidden="true">
+            <label>
+              Don’t fill this out if you're human: 
+              <input name="bot-field" />
+            </label>
+          </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="name">NAME</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="name" name="name" placeholder="Please enter your name...">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+              <label for="email">EMAIL</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="email" name="email" placeholder="Enter your email..." required>
+            </div>
+          </div>        
+        <div class="row">
+          <div class="col-25">
+            <label for="coname">COMPANY NAME</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="coname" name="lastname" placeholder="Your company name..." required>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+              <label for="website">COMPANY WEB SITE</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="website" name="website" placeholder="Your company's web site url..." required>
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="sector">INDUSTRY SECTOR</label>
+          </div>
+          <div class="col-75">
+            <select id="sector" name="sector">
+              <option value="retail">Retail</option>
+              <option value="brand">Consumer Products</option>
+              <option value="software">Software</option>
+              <option value="software">Consulting</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="comments">COMMENTS</label>
+          </div>
+          <div class="col-75">
+            <textarea id="comments" name="comments" placeholder="Additional comments.." style="height:200px"></textarea>
+          </div>
+        </div>
+        <div class="row center-button">
+          <input type="submit" value="Submit" class="btn btn-primary mt-3">
+        </div>
+      </form>
+      <!-- verification code -->
+      <form id="betaverify" style="display: none;">
+        <div hidden aria-hidden="true">
+            <label>
+              Don’t fill this out if you're human: 
+              <input name="bot-field" />
+            </label>
+          </div>
+        <h4 style="text-align: center;">Check your email (or junk mail) for the verification code and enter it here</h4>
+        <div class="row mt-4">
+          <div class="col-25">
+            <label for="verify">VERIFY</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="verify" name="verify" placeholder="Please enter your 5 digit verification code..">
+          </div>
+        </div>
+        
+        <div class="row center-button">
+          <input type="submit" value="Submit" class="btn btn-primary mt-3">
+        </div>
+      </form>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="form.js"></script>
+</body>
+
+</html>

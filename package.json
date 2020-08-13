@@ -1,0 +1,38 @@
+{
+  "name": "proximity",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Strategic Machines",
+  "license": "MIT",
+  "description": "information site for proximity platform",
+  "keywords": [],
+  "engines": {
+    "node": ">= 11"
+  },
+  "scripts": {
+    "build": "netlify-lambda build functions",
+    "👇 ABOUT-local": "💡 spin up test server on port 9000 to test netlify functions locally",
+    "serve": "node test/server",
+    "fnrun": "netlify-lambda serve functions",
+    "local": "npm-run-all --parallel fnrun serve"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.1.1",
+    "bootstrap": "^4.5.0",
+    "dotenv": "^8.2.0",
+    "encoding": "^0.1.12",
+    "jquery": "^1.12.4",
+    "mongodb": "^3.5.5",
+    "netlify-lambda": "^1.6.3",
+    "node-fetch": "^2.6.0",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "npm-run-all": "^4.1.5"
+  }
+}

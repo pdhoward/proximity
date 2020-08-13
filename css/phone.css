@@ -1,0 +1,16 @@
+
+    /* The device with borders */
+    .smartphone {
+      position: relative;
+      width: 360px;
+      height: 640px;
+      margin: auto;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .smartphone {
+        margin-bottom: -7rem;
+      }
+    }
