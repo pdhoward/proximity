@@ -8,6 +8,8 @@ const options = {
         useUnifiedTopology: true }
 
 exports.createConnection = async () => { 
+  console.log(`--------debug connection ------------`)
+  console.log(url)
   const client = new MongoClient(url, options)
 
   try {

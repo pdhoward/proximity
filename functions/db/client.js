@@ -7,7 +7,7 @@ function subscriberTemplate() {
   this.token = "12345"
   this.name = "anonymous"
   this.company = "Strategic Machines"
-  this.url = "https:proximitymachine.netlify.com"
+  this.url = "https:proximitymachine.netlify.app"
   this.sector = "software"
   this.comments = "Audience of One"
   this.isVerified = false
