@@ -35,12 +35,9 @@ const processBeta = (form, e) => {
     body: JSON.stringify(obj)
   })
   .then( async (result) => {
-    console.log(`-----STEP 2 - SWITCH FORMS ----`)
-    //console.log(result)
-    //const response = await result.json()
+    console.log(`-----STEP 2 - SWITCH FORMS ----`)    
     em = await result.json()
-    console.log(em)
-
+   
     // Switch forms. If already a verified subscriber, then all done
     if (!em.isVerified) {
       $('#betaform').css('display','none');
@@ -60,7 +57,7 @@ const processBeta = (form, e) => {
 const processEmailAuth = (form, e) => {         
   const code = document.getElementById('verify').value
   console.log(`------Match Tokens, Verify email-----`)
-  console.log(code)
+  
   em.userToken = code
   fetch(`/.netlify/functions/verifysubscriber`, {
     headers: {
@@ -71,7 +68,7 @@ const processEmailAuth = (form, e) => {
   .then( async (result) => {
     console.log(`------FINISHED VERIFICATION -----`)       
     const response = await result.json()
-    console.log(response)
+    
     // switch forms
     if (!response.isVerified) {
       form.innerHTML = notverified;
@@ -89,12 +86,12 @@ const processEmailAuth = (form, e) => {
 betaform.onsubmit = async (e) => {
   e.preventDefault()
   let result = await processBeta(betaform, e)
-  console.log(result)
+  
 }
 
 betaverify.onsubmit = async (e) => {
   e.preventDefault()
   let result = await processEmailAuth(betaverify, e)
-  console.log(result)
+  
 }
 })(jQuery)
